@@ -99,8 +99,11 @@ int main(void)
   HAL_StatusTypeDef ret_val;
   FLASH_OBProgramInitTypeDef option_bytes;
   HAL_FLASHEx_OBGetConfig(&option_bytes);
+  // Set RDPLevel
+  option_bytes.RDPLevel = OB_RDP_LEVEL_0;
   HAL_GPIO_WritePin(GPIOB, LD2_Pin, GPIO_PIN_SET);
-  
+  HAL_FLASHEx_OBProgram(&option_bytes);
+  HAL_FLASHEx_OBGetConfig(&option_bytes);
   /* USER CODE END 2 */
 
   /* Infinite loop */
