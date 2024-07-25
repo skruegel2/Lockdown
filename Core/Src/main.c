@@ -18,10 +18,12 @@
   */
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
+#include <stdint.h>
 #include "main.h"
 #include "tim.h"
 #include "usart.h"
 #include "gpio.h"
+#include <stm32f4xx_hal_flash_ex.h>
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -92,7 +94,11 @@ int main(void)
   MX_TIM6_Init();
   /* USER CODE BEGIN 2 */
   int unlock_port = 1;
-
+//  uint16_t* option_byte_ptr = (uint16_t*)0x1FFEC008;
+//  volatile uint16_t option_byte_value = *option_byte_ptr;
+  HAL_StatusTypeDef ret_val;
+  FLASH_OBProgramInitTypeDef option_bytes;
+  HAL_FLASHEx_OBGetConfig(&option_bytes);
   HAL_GPIO_WritePin(GPIOB, LD2_Pin, GPIO_PIN_SET);
   
   /* USER CODE END 2 */
