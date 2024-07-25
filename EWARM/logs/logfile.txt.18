@@ -1,0 +1,15 @@
+2024-07-25 13:49:28,272 - INFO : Secworld candidate: C:\\github\\Lockdown\\EWARM\\LD Security Context\\Lockdown_profile-default.xml
+2024-07-25 13:49:28,273 - INFO : Attempt to load security context configuration
+2024-07-25 13:49:28,273 - INFO : Secworld candidate: C:\\github\\Lockdown\\EWARM\\LD Security Context\\Lockdown_profile-default.xml
+2024-07-25 13:49:28,288 - INFO : Validating XML against schema
+2024-07-25 13:49:28,320 - INFO : Verifying all certificates are signed correctly...
+2024-07-25 13:49:28,322 - INFO : Writing XML file: "C:\Users\skruegel\AppData\Local\Temp\EW9634.tmp"
+2024-07-25 13:49:28,324 - INFO : Successfully wrote XML file: "C:\Users\skruegel\AppData\Local\Temp\EW9634.tmp"
+2024-07-25 13:49:28,324 - INFO : Exit report created.
+2024-07-25 13:49:28,325 - INFO : ***********Embedded Trust Security Manager Starting - (c) Secure Thingz Limited ***********
+2024-07-25 13:49:28,325 - INFO : Command line: ['C:\\\\Program Files (x86)\\\\IAR Systems\\\\Embedded Workbench 8.4\\\\arm\\\\stz\\\\stzsgm.exe', 'getoptlist', '--typelist', 'SWUPKEYSEL', '--config', 'C:\\\\github\\\\Lockdown\\\\EWARM\\\\LD Security Context\\\\Lockdown_profile-default.xml', '--logfile', 'C:\\\\github\\\\Lockdown\\\\EWARM\\\\logs\\\\logfile.txt', '--exitreport', 'C:\\\\Users\\\\skruegel\\\\AppData\\\\Local\\\\Temp\\\\EW9634.tmp', '--language', 'ENG']
+2024-07-25 13:49:28,327 - INFO : App version is 0.0.0.0
+2024-07-25 13:49:28,327 - INFO : Running: "_add_liccheck_and_run"
+2024-07-25 13:49:28,327 - INFO : Writing XML file: "C:\Users\skruegel\AppData\Local\Temp\EW9634.tmp"
+2024-07-25 13:49:28,329 - INFO : Successfully wrote XML file: "C:\Users\skruegel\AppData\Local\Temp\EW9634.tmp"
+2024-07-25 13:49:28,330 - INFO : Exit report created.

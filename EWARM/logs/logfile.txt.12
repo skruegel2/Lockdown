@@ -1,0 +1,13 @@
+2024-07-25 13:54:48,435 - INFO : Writing XML file: "C:\Users\skruegel\AppData\Local\Temp\EW77AF.tmp"
+2024-07-25 13:54:48,438 - INFO : Successfully wrote XML file: "C:\Users\skruegel\AppData\Local\Temp\EW77AF.tmp"
+2024-07-25 13:54:48,439 - INFO : Exit report created.
+2024-07-25 13:54:48,439 - INFO : ***********Embedded Trust Security Manager Starting - (c) Secure Thingz Limited ***********
+2024-07-25 13:54:48,439 - INFO : Command line: ['C:\\\\Program Files (x86)\\\\IAR Systems\\\\Embedded Workbench 8.4\\\\arm\\\\stz\\\\stzsgm.exe', 'checkswvalidity', '--config', 'C:\\\\github\\\\Lockdown\\\\EWARM\\\\LD Security Context\\\\Lockdown_profile-default.xml', '--output', 'C:\\\\Users\\\\skruegel\\\\AppData\\\\Local\\\\Temp\\\\EW77B0.tmp', '--logfile', 'C:\\\\github\\\\Lockdown\\\\EWARM\\\\logs\\\\logfile.txt', '--exitreport', 'C:\\\\Users\\\\skruegel\\\\AppData\\\\Local\\\\Temp\\\\EW77AF.tmp', '--language', 'ENG']
+2024-07-25 13:54:48,440 - INFO : App version is 0.0.0.0
+2024-07-25 13:54:48,441 - INFO : Running: "_add_liccheck_and_run"
+2024-07-25 13:54:48,441 - INFO : Secworld candidate: C:\github\Lockdown\EWARM\LD Security Context\Lockdown_profile-default.xml
+2024-07-25 13:54:48,456 - INFO : Validating XML against schema
+2024-07-25 13:54:48,494 - INFO : Verifying all certificates are signed correctly...
+2024-07-25 13:54:48,497 - INFO : Writing XML file: "C:\Users\skruegel\AppData\Local\Temp\EW77AF.tmp"
+2024-07-25 13:54:48,499 - INFO : Successfully wrote XML file: "C:\Users\skruegel\AppData\Local\Temp\EW77AF.tmp"
+2024-07-25 13:54:48,499 - INFO : Exit report created.

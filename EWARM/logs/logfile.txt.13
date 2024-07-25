@@ -1,0 +1,45 @@
+2024-07-25 13:53:56,146 - INFO : Secworld candidate: C:\\github\\Lockdown\\EWARM\\LD Security Context\\Lockdown_profile-default.xml
+2024-07-25 13:53:56,147 - INFO : Attempt to load security context configuration
+2024-07-25 13:53:56,148 - INFO : Secworld candidate: C:\\github\\Lockdown\\EWARM\\LD Security Context\\Lockdown_profile-default.xml
+2024-07-25 13:53:56,174 - INFO : Validating XML against schema
+2024-07-25 13:53:56,230 - INFO : Verifying all certificates are signed correctly...
+2024-07-25 13:53:56,237 - INFO : SWUP Version: 1.0
+2024-07-25 13:53:56,240 - INFO : Writing XML file: "C:\Users\skruegel\AppData\Local\Temp\EWAA4C.tmp"
+2024-07-25 13:53:56,244 - INFO : Successfully wrote XML file: "C:\Users\skruegel\AppData\Local\Temp\EWAA4C.tmp"
+2024-07-25 13:53:56,245 - INFO : Exit report created.
+2024-07-25 13:53:56,246 - INFO : ***********Embedded Trust Security Manager Starting - (c) Secure Thingz Limited ***********
+2024-07-25 13:53:56,246 - INFO : Command line: ['C:\\\\Program Files (x86)\\\\IAR Systems\\\\Embedded Workbench 8.4\\\\arm\\\\stz\\\\stzsgm.exe', 'master', '--config', 'C:\\\\github\\\\Lockdown\\\\EWARM\\\\LD Security Context\\\\Lockdown_profile-default.xml', '--input', 'C:\\\\github\\\\Lockdown\\\\EWARM\\\\Lockdown\\\\Exe\\\\Lockdown.srec', '--output', 'C:\\\\github\\\\Lockdown\\\\EWARM\\\\Lockdown\\\\Exe\\\\Lockdown.mastered.srec', '--output-diei', 'C:\\\\github\\\\Lockdown\\\\EWARM\\\\Lockdown\\\\Exe\\\\Lockdown.directexec.srec', '--output-stztef', 'C:\\\\github\\\\Lockdown\\\\EWARM\\\\Lockdown\\\\Exe\\\\Lockdown.stztef', '--version', '1.0', '--device', 'STM32F429ZI', '--updatekeytype', 'NAMED', '--keysel', 'Group Key ID-0001', '--logfile', 'C:\\\\github\\\\Lockdown\\\\EWARM\\\\logs\\\\logfile.txt', '--exitreport', 'C:\\\\Users\\\\skruegel\\\\AppData\\\\Local\\\\Temp\\\\EWAA4C.tmp', '--language', 'ENG']
+2024-07-25 13:53:56,247 - INFO : App version is 0.0.0.0
+2024-07-25 13:53:56,248 - INFO : Running: "_add_liccheck_and_run"
+2024-07-25 13:53:56,259 - INFO : Licence not available: Name = 'ET.PROPLUS', Version = '1.00'
+2024-07-25 13:53:56,260 - INFO : Licence not available: Name = 'ET.ARM.ET', Version = '1.07'
+2024-07-25 13:53:56,261 - INFO : Licence not available: Name = 'ET.RX.ET', Version = '1.07'
+2024-07-25 13:53:56,262 - INFO : Licence not available: Name = 'ET.PROFESSIONAL', Version = '1.00'
+2024-07-25 13:53:56,265 - INFO : Licence potentially available: ARM.EW.CTRUST, 1.18
+2024-07-25 13:53:56,265 - INFO : Licence not available: Name = 'ARMFS850.EW.CTRUST', Version = '1.00'
+2024-07-25 13:53:56,266 - INFO : Licence not available: Name = 'ARMFS920.EW.CTRUST', Version = '1.00'
+2024-07-25 13:53:56,267 - INFO : Licence not available: Name = 'RX.EW.CTRUST', Version = '1.13'
+2024-07-25 13:53:56,267 - INFO : Licence not available: Name = 'RXFS414.EW.CTRUST', Version = '1.00'
+2024-07-25 13:53:56,274 - INFO : Obtained licence
+2024-07-25 13:53:56,277 - INFO : Licence not available: Name = 'ET.PROPLUS', Version = '1.00'
+2024-07-25 13:53:56,277 - INFO : Licence not available: Name = 'ET.ARM.ET', Version = '1.07'
+2024-07-25 13:53:56,278 - INFO : Licence not available: Name = 'ET.RX.ET', Version = '1.07'
+2024-07-25 13:53:56,280 - INFO : Licence not available: Name = 'ET.PROFESSIONAL', Version = '1.00'
+2024-07-25 13:53:56,281 - INFO : Licence potentially available: ARM.EW.CTRUST, 1.18
+2024-07-25 13:53:56,282 - INFO : Licence not available: Name = 'ARMFS850.EW.CTRUST', Version = '1.00'
+2024-07-25 13:53:56,283 - INFO : Licence not available: Name = 'ARMFS920.EW.CTRUST', Version = '1.00'
+2024-07-25 13:53:56,283 - INFO : Licence not available: Name = 'RX.EW.CTRUST', Version = '1.13'
+2024-07-25 13:53:56,284 - INFO : Licence not available: Name = 'RXFS414.EW.CTRUST', Version = '1.00'
+2024-07-25 13:53:56,287 - INFO : Obtained licence
+2024-07-25 13:53:56,288 - INFO : Obtained a licence for master
+2024-07-25 13:53:56,288 - INFO : Product is licensed or no licence required
+2024-07-25 13:53:56,289 - INFO : Input application s-rec: C:\github\Lockdown\EWARM\Lockdown\Exe\Lockdown.srec
+2024-07-25 13:53:56,289 - INFO : Output SWUP S-Rec format: C:\github\Lockdown\EWARM\Lockdown\Exe\Lockdown.mastered.srec
+2024-07-25 13:53:56,290 - INFO : Module Id: 0
+2024-07-25 13:53:56,290 - INFO : Mastering for device: STM32F429ZI
+2024-07-25 13:53:56,291 - INFO : Reading device parameters for STM32F429XI...
+2024-07-25 13:53:56,291 - INFO : Device name from command line is STM32F429ZI...
+2024-07-25 13:53:56,304 - ERROR : Failed to master due to invalid SREC: 
+2024-07-25 13:53:56,305 - INFO : Writing XML file: "C:\Users\skruegel\AppData\Local\Temp\EWAA4C.tmp"
+2024-07-25 13:53:56,307 - INFO : Successfully wrote XML file: "C:\Users\skruegel\AppData\Local\Temp\EWAA4C.tmp"
+2024-07-25 13:53:56,307 - INFO : Exit report created.

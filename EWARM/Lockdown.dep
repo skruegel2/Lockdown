@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project>
     <fileVersion>4</fileVersion>
-    <fileChecksum>1062502703</fileChecksum>
+    <fileChecksum>3545984708</fileChecksum>
     <configuration>
         <name>Lockdown</name>
         <outputs>
@@ -170,6 +170,7 @@
             <file>$PROJ_DIR$\..\Drivers\STM32F4xx_HAL_Driver\Inc\Legacy\stm32_hal_legacy.h</file>
             <file>$PROJ_DIR$\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_flash_ramfunc.h</file>
             <file>$PROJ_DIR$\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_tim_ex.h</file>
+            <file>$PROJ_DIR$\Lockdown\Exe\Lockdown.mastered.srec</file>
         </outputs>
         <file>
             <name>[ROOT_NODE]</name>
@@ -829,5 +830,9 @@
                 </tool>
             </inputs>
         </file>
+        <forcedrebuild>
+            <name>$PROJ_DIR$\Lockdown\Exe\Lockdown.out</name>
+            <tool>EMBEDDED_TRUST</tool>
+        </forcedrebuild>
     </configuration>
 </project>
