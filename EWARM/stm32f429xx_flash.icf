@@ -2,19 +2,28 @@
 /*-Editor annotation file-*/
 /* IcfEditorFile="$TOOLKIT_DIR$\config\ide\IcfEditor\cortex_v1_0.xml" */
 /*-Specials-*/
-define symbol __ICFEDIT_intvec_start__ = 0x08000000;
+define symbol __ICFEDIT_intvec_start__ = 0x08020000;
 /*-Memory Regions-*/
-define symbol __ICFEDIT_region_ROM_start__    = 0x08000000;
-define symbol __ICFEDIT_region_ROM_end__      = 0x081FFFFF;
+define symbol __ICFEDIT_region_ROM_start__    = 0x08020000;
+define symbol __ICFEDIT_region_ROM_end__      = 0x080FF7FF;
 define symbol __ICFEDIT_region_RAM_start__    = 0x20000000;
-define symbol __ICFEDIT_region_RAM_end__      = 0x2002FFFF;
+define symbol __ICFEDIT_region_RAM_end__      = 0x2002CFFF;
 define symbol __ICFEDIT_region_CCMRAM_start__ = 0x10000000;
 define symbol __ICFEDIT_region_CCMRAM_end__   = 0x1000FFFF;
 /*-Sizes-*/
-define symbol __ICFEDIT_size_cstack__ = 0x400;
-define symbol __ICFEDIT_size_heap__ = 0x200;
+define symbol __ICFEDIT_size_cstack__ = 0x10000;
+define symbol __ICFEDIT_size_heap__   = 0x10000;
 /**** End of ICF editor section. ###ICF###*/
 
+/* APPLICATION SYMBOLS - FLASH */
+define exported symbol STZ_ADDR_EXECUTABLE_START           = 0x8020000;
+define exported symbol STZ_ADDR_EXECUTABLE_END             = 0x80fffff;
+define exported symbol STZ_ADDR_SECAPI_ACCESS_WINDOW_START = 0x80001dc;
+define exported symbol STZ_ADDR_SECAPI_ACCESS_WINDOW_END   = 0x80001df;
+
+/* APPLICATION SYMBOLS - RAM */
+define exported symbol STZ_ADDR_APPLICATION_RAM_START      = 0x20000000;
+define exported symbol STZ_ADDR_APPLICATION_RAM_END        = 0x2002cfff;
 
 define memory mem with size = 4G;
 define region ROM_region      = mem:[from __ICFEDIT_region_ROM_start__   to __ICFEDIT_region_ROM_end__];
@@ -27,8 +36,54 @@ define block HEAP      with alignment = 8, size = __ICFEDIT_size_heap__     { };
 initialize by copy { readwrite };
 do not initialize  { section .noinit };
 
-place at address mem:__ICFEDIT_intvec_start__ { readonly section .intvec };
 
-place in ROM_region   { readonly };
+/* Define a block for the kernel's functions.  - 0x1b0 because the first part of
+the 16K is taken by the interrupt vectors. */
+define block __kernel_functions_block__ with alignment = 8, size = 0x4000 - 0x1b0 { section __kernel_functions__ };
+
+/* Place the interrupt vectors at the required address, followed by the kernel's
+functions. */
+place at address mem:__ICFEDIT_intvec_start__ { readonly section .intvec, block __kernel_functions_block__ };
+
+/* Place the remainder of the read-only items into flash. */
+define block __user_rom_block__ with alignment = 8 { readonly };
+place in ROM_region   { block __user_rom_block__ };
+
+
+/* Define a block for the kernel's data. */
+define block __kernel_data_block__ with alignment = 0x400, size = 0x400 { section __kernel_data__, section __kernel_nz_data__ };
+
+
+/* Define a block for the Idle task data. */
+define block __idle_task_data_block__ with alignment = 0x20, size = 0x20
+{
+	section __idle_task_data__,
+	section __idle_task_zero_data__
+};
+
+/* Place the RAM vector table at the start of SRAM, followed by the kernel's
+data. */
+place at start of RAM_region { block __kernel_data_block__ };
+
 place in RAM_region   { readwrite,
+						block __idle_task_data_block__,
                         block CSTACK, block HEAP };
+
+/* Export symbols required by c code. */
+define symbol lnkStartFlashAddress	= __ICFEDIT_region_ROM_start__; // for alignment
+define symbol lnkEndFlashAddress	= __ICFEDIT_region_ROM_end__;
+
+export symbol lnkStartFlashAddress;
+export symbol lnkEndFlashAddress;
+
+export symbol __ICFEDIT_intvec_start__;
+export symbol __ICFEDIT_size_cstack__;
+export symbol __ICFEDIT_region_ROM_start__;
+export symbol __ICFEDIT_region_ROM_end__;
+
+/* Place the checksum into flash.  For PermE8, it's 0x081FFFDC.
+* Your IAR project needs the following Linker options set:
+* Checksum
+*   check Fill unused code memory
+*   make the end address 0x081FFFDB */
+place at end of ROM_region { readonly section .checksum };
